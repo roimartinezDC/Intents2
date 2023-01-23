@@ -24,9 +24,12 @@ class SecondActivity : AppCompatActivity() {
         txtVnum1.text = num1.toString()
         txtVnum2.text = num2.toString()
 
+        //pongo en el onClickListener del botón el recoger y enviar el valor que introduce el usuario por pantalla
         val btnEnviar = findViewById<Button>(R.id.btnEnviar)
         btnEnviar.setOnClickListener {
-            intent.putExtra("suma", txtResult.text)
+            //para convertir el objeto Editable que devuelve el EditText a Int
+            val res : Int = txtResult.text.toString().toInt()
+            intent.putExtra("suma", res)
             setResult(Activity.RESULT_OK, intent)
             finish()
         }
