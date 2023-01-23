@@ -19,13 +19,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnFoto = findViewById<Button>(R.id.button1)
-        btnFoto.setOnClickListener() {
+        btnFoto.setOnClickListener {
             val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(takePictureIntent, REQ_IMG_CAP)
         }
 
         val btnNum = findViewById<Button>(R.id.button2)
-        btnNum.setOnClickListener() {
+        btnNum.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             val random = kotlin.random.Random
             intent.putExtra("num1", random.nextInt(1,100))
