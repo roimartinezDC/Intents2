@@ -11,16 +11,12 @@ import android.widget.ImageView
 class MainActivity : AppCompatActivity() {
 
     private val REQ_IMG_CAP = 1
+    private val REQ_NUM = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnFoto = findViewById<Button>(R.id.button1)
-        btnFoto.setOnClickListener() {
-            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(takePictureIntent, REQ_IMG_CAP)
-        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
